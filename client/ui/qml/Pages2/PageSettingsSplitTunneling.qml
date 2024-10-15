@@ -22,7 +22,7 @@ PageType {
     id: root
 
     property var isServerFromTelegramApi: ServersModel.getDefaultServerData("isServerFromTelegramApi")
-    
+
     defaultActiveFocusItem: searchField.textField
 
     Item {
@@ -207,24 +207,24 @@ PageType {
                 width: parent.width
                 height: sites.contentItem.height
 
-                model: SortFilterProxyModel {
-                    id: proxySitesModel
-                    sourceModel: SitesModel
-                    filters: [
-                        AnyOf {
-                            RegExpFilter {
-                                roleName: "url"
-                                pattern: ".*" + searchField.textField.text + ".*"
-                                caseSensitivity: Qt.CaseInsensitive
-                            }
-                            RegExpFilter {
-                                roleName: "ip"
-                                pattern: ".*" + searchField.textField.text + ".*"
-                                caseSensitivity: Qt.CaseInsensitive
-                            }
-                        }
-                    ]
-                }
+                // model: SortFilterProxyModel {
+                //     id: proxySitesModel
+                //     sourceModel: SitesModel
+                //     filters: [
+                //         AnyOf {
+                //             RegExpFilter {
+                //                 roleName: "url"
+                //                 pattern: ".*" + searchField.textField.text + ".*"
+                //                 caseSensitivity: Qt.CaseInsensitive
+                //             }
+                //             RegExpFilter {
+                //                 roleName: "ip"
+                //                 pattern: ".*" + searchField.textField.text + ".*"
+                //                 caseSensitivity: Qt.CaseInsensitive
+                //             }
+                //         }
+                //     ]
+                // }
 
                 clip: true
                 interactive: false
